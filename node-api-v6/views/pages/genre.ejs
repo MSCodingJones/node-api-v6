@@ -1,0 +1,24 @@
+%- include('../partials/header'); %>
+
+<main class="main" id="genreMain">
+    <div class="container">
+        <div class="row">
+
+            </div>
+            <% data.forEach(item => { %>
+                <div class="col-md-3">
+                    <figure class="figure genre-figure" id="genreFigure<%= item.genre_id %>">
+                        <img src="/images/<%= item.imgUrl %>" alt="image of <%= item.genre %>" class="img-fluid figure-image rounded" />  
+                        <figcaption class="figure-caption">
+                            <a href="/genre/<%= item.genre_id %>">
+                                    <%= item.genre %>
+                            </a>
+                        </figcaption>                  
+                    </figure>
+                </div> 
+            <% }) %>
+        </div>   
+    </div>
+</main> 
+
+<%- include('../partials/footer'); %> 

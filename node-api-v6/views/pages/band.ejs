@@ -1,0 +1,23 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="bandMain">
+    <div class="container">
+        <div class="row">
+
+            <% data.forEach(item => { %>
+                <div class="col-md-3">
+                    <figure class="figure band-figure" id="bandFigure<%= item.band_id %>">
+                        <img src="/images/<%= item.imgUrl %>" alt="image of <%= item.band %>" class="img-fluid figure-image rounded" />  
+                        <figcaption class="figure-caption">
+                            <a href="/band/<%= item.band_id %>">
+                                    <%= item.band %>
+                            </a>
+                        </figcaption>                  
+                    </figure>
+                </div> 
+            <% }) %>
+        </div>   
+    </div>
+</main> 
+
+<%- include('../partials/footer'); %> 

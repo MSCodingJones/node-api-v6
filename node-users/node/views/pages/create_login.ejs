@@ -1,0 +1,47 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="loginForm">
+    <div class="container">
+        <form action="#" method="POST" class="form">
+            <h2>Create Login Info</h2>
+            <div class="mb-3">
+                <label for="username" class="form-label text-capitalize">username</label>
+                <input 
+                type="text"
+                class="form-control"
+                name="username"
+                value=""
+                id="username"
+                required
+                />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-capitalize">password</label>
+                    <input 
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    value=""
+                    id="password"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label text-capitalize">confirmPassword</label>
+                <input 
+                type="confirmPassword"
+                    class="form-control"
+                    name="confirmPassword"
+                    value=""
+                    id="confirmPassword"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

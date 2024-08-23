@@ -1,0 +1,56 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="albumSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/<%= data.album_cover %>" alt="<%= data.album_cover %> " class="img-fluid album-cover rounded" /> 
+            </div>
+            <div class="col-md-6">
+                <div class="toggle-pages d-flex justify-content-around">
+                    <% if (data.album_id > 1) { %>
+                        <a href="/album/<%= data.album_id - 1 %>" class="prev-link" id="prevLink">&lt;&lt; Prev</a>
+                  <% } %>
+
+                  <% if (data.album_id < count) { %>
+                    <a href="/album/<%= data.album_id + 1 %>" class="next-link" id="nextLink">Next &gt;&gt</a>
+                 <% } %>
+                    </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Title: <%= data.title %>
+                    </li>
+                    <li class="list-group-item">
+                        Artist/Band:
+                        <% if (data.band == '') { %>
+                            <a href="/artist/<%= data.artist_id %>">
+                                <% if (data.alias == '') { %>
+
+                                    <%= data.fName %> <%= data.lName %>
+                                <% } else { %>
+                                        <%= data.alias %>
+                                    <% } %>
+                                </a>                          
+                        <% } else { %>  
+                            <a href="/band/<%= data.band_id %>">
+                                <%= data.band %>
+                            </a>
+                        <% } %>
+                    </li>
+                    <li class="list-group-item">
+                        Year Released: <%= data.yr_released %>
+                    </li>
+                    <li class="list-group-item">
+                        Label: 
+                        <a href="/label/<%= data.label_id %>">
+                            <%= data.label %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+        </div>   
+    </div>
+</main> 
+
+<%- include('../partials/footer'); %> 

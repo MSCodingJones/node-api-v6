@@ -1,0 +1,40 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="albumMain">
+    <div class="container">
+        <div class="row">
+            <nav class="nav justify-content-evenly" id="albumNav">
+                <a href="/album/sort" class="nav-link text-captialize">sort albums</a>
+                <a href="/album/form" class="nav-link text-captialize">add an album</a>
+            </nav>
+
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="row">
+                    <% data.forEach(item => { %>
+                        <div class="col-md-3">
+                            <figure class="figure album-figure" id="albumFigure<%= item.album_id %>">                       
+                                <img src="/images/<%= item.album_cover %>" alt="image of <%= item.title %>" class="img-fluid figure-image rounded" />  
+                                <figcaption class="figure-caption">
+                                    <a href="/album/<%= item.album_id %>">
+                                        <%= item.title %>
+                                    </a>
+                                    |
+                                    <% if (item.band == '') { %>
+                                <a href="/artist/<%= item.artist_id %>">
+                                <%= item.fName %> <%= item.lName %>
+                            </a>
+                            <% } %>
+                        </figcaption>                  
+                    </figure>
+                </div> 
+            <% }) %>
+        </div>
+    </div>
+</div>
+        </div>   
+    </div>
+</main> 
+
+<%- include('../partials/footer'); %> 

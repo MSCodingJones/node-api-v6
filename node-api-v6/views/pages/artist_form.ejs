@@ -1,0 +1,56 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id ="formMain">
+    <div class="container"
+        <form action="/api/artist/create" method="POST">
+            <h2>Add an artist</h2>
+            <div class="mb-3">
+                <label for="fName" class="form-label">first name</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="fName"
+                    id="fName"
+                    value=""
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="lName" class="form-label">last name</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="lName"
+                    id="lName"
+                    value=""
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="alias" class="form-label">alias</label>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    name="alias"
+                    id="alias"
+                    value=""
+                />
+            </div>
+            <div class="mb-3">
+                <label for="imgUrl" class="form-label">image</label>
+                <input 
+                    type="file" 
+                    class="form-control" 
+                    name="imgUrl"
+                    id="imgUrl"
+                    value=""
+                />
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Add Artist" />            
+            </div>
+        </form>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

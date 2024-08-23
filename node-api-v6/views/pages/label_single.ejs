@@ -1,0 +1,48 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="labelMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10"> 
+                <div class="row">
+                    <% data.forEach(item=> { %>
+                        <div class="col-md-2">
+                            <div class="card h-100">
+                            <img src="/images/<%= item.album_cover %>" alt="image of <%= item.album_cover %>" class="img-fluid card-img" />
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <a href="/album/<%= item.album_id %>">
+                                        <%= item.title %>
+                                    </a>
+                                </h3>
+
+                                <p class="card-text">
+                                    <% if (item.band == '') { %>
+                                        <a href="/artist/<%= item.artist_id %>">
+                                            <% if (item.alias == '') { %>
+                                                <%= item.fName %> <%= item.lName %>                                      
+                                            <% } else { %>  
+                                                <%= item.alias %>
+                                            <% } %>
+                                            </a>                                        
+                                         <% } else { %>  
+                                            <a href="/band/<%= item.band_id %>">
+                                                <%= item.band %>
+                                            </a>
+                                        <% } %> 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+
+                </div>
+            </div>
+            <div class="col-md-2">
+                <%- include('../partials/aside');  %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer'); %>

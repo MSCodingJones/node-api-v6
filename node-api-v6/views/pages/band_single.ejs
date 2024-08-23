@@ -1,0 +1,34 @@
+<%- include('../partials/header'); %>
+
+<main class="main" id="bandSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/images/<%= data[0].imgUrl %>" alt="image of <%= name %>" class="img-fluid figure-image rounded" /> 
+            </div>
+            <div class="col-md-6">
+                <h2 class="sub-heading">
+                    <%= name %>
+                </h2>
+                <div class="row">
+                    <h3 class="h3-subheading text capitalize">albums from <%= name %></h3>
+                    <div class="col-sm-4">
+                        <% data.forEach(item => { %>
+                        <figure class="figure band-figure-single">
+                            <img src="/images/<%= item.album_cover %>" alt="image of <%= item.title  %>" class="img-fluid figure-img" />
+                            <figcaption class="figure-caption">
+                                <a href="/album/<%= item.album_id %>">
+                                    <%= item.title %>
+                                </a>
+                                | <%= item.yr_released %>
+                            </figcaption>
+                        </figure>
+                      <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</main> 
+
+<%- include('../partials/footer'); %> 

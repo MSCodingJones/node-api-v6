@@ -1,0 +1,46 @@
+:root {
+    --prim: #216869;
+    --sec: #9cc581;
+    --tert: #dce1de;
+    --textColor1: #1f2421;
+    --textColor2: #49a078; 
+    --mainFont: 'Ubuntu', sans-serif; 
+}
+
+* { box-sizing: border-box;}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--tert);
+}
+
+h1, h2 {
+    color: var(--textColor2);
+}
+
+p {
+    color: var(--textColor1);
+}
+
+a {
+    color: var(--textColor2);
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    color: var(--prim);
+}
+
+header, footer {
+    padding: 15px 0;
+}
+
+.main {
+    margin: 80px 0;
+    padding: 15px 0;
+}
+
+footer {
+    border-top: 5px solid var(--prim);
+}
